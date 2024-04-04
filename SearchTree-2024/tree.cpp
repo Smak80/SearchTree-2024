@@ -68,6 +68,7 @@ void drop(node*& root)
 	if (root->left) drop(root->left);
 	if (root->right) drop(root->right);
 	delete root;
+	root = nullptr;
 }
 
 node*& get(node*& root, int value)
