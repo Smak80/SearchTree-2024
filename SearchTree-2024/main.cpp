@@ -15,7 +15,7 @@ void show_tree(node* root, bypass type)
 	{
 		case prefix:
 		{
-			cout << root->val << " ";
+			cout << root->val << "(" << root->count << ") ";
 			show_tree(root->left, type);
 			show_tree(root->right, type);
 			break;
@@ -23,7 +23,7 @@ void show_tree(node* root, bypass type)
 		case infix:
 		{
 			show_tree(root->left, type);
-			cout << root->val << " ";
+			cout << root->val << "(" << root->count << ") ";
 			show_tree(root->right, type);
 			break;
 		}
@@ -31,7 +31,7 @@ void show_tree(node* root, bypass type)
 		{
 			show_tree(root->left, type);
 			show_tree(root->right, type);
-			cout << root->val << " ";
+			cout << root->val << "(" << root->count << ") ";
 			break;
 		}
 	}
@@ -46,17 +46,16 @@ void show_tree(tree t, bypass type)
 void main()
 {
 	setlocale(LC_ALL, "");
-	int a[] = { 2, 7, 3, 10, 1, 5, 12, 4 };
-	size_t sz = 8;
+	int a[] = { 2, 7, 3, 10, 1, 3, 3, 5, 6, 6 };
 	tree t;
-	for (int i = 0; i< sz; i++)
+	for (size_t i = 0; i < sizeof(a) / sizeof(int); i++)
 	{
 		add(t, a[i]);
 	}
 	show_tree(t, infix);
-	remove(t, 7);
+	remove(t, 3);
 	show_tree(t, prefix);
-	remove(t, 4);
+	remove(t, 10);
 	show_tree(t, postfix);
 	drop(t);
 	show_tree(t, infix);
