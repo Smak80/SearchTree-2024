@@ -6,7 +6,6 @@ node*& get(node*& root, int value);
 bool remove(node*& root, int value);
 void move_node(node* rem_el, node* root, node* parent, bool right);
 void drop(node*& root);
-int get_tree_height(const node* root);
 
 void small_left_rotate(node*& root);
 void small_right_rotate(node*& root);
@@ -31,7 +30,7 @@ void remove(tree& t, int value)
 }
 
 /// ‘ункци€ удалени€ элемента из списка
-/// @param root коренвой элемент, определ€ющий дерево или поддерево
+/// @param root корневой элемент, определ€ющий дерево или поддерево
 /// @param value значение, которое необходимо удалить
 /// @return true, если значение было удалено и false в противном случае
 bool remove(node*& root, int value)

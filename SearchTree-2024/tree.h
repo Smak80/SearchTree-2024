@@ -19,3 +19,4 @@ bool add(tree& t, int value);
 node* get(tree t, int value);
 void remove(tree& t, int value);
 void drop(tree& t);
+int get_tree_height(const node* root);
